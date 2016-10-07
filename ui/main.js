@@ -2,7 +2,7 @@ var button=document.getElementById('counter');
 
 button.onclick = function () {
 
-    var request= new XMLHttpRequest();
+   /*/ var request= new XMLHttpRequest();
     requst.onreadystatechange=function() {
         if(requset.readyState === XMLHttpRequest.DONE){
         if(request.status === 200) {
@@ -13,5 +13,8 @@ button.onclick = function () {
         }
     };
     request.open('GET','http://asashukla.imad.hasura-app.io/counter', true);
-    request.send(null);
+    request.send(null);/*/
+    counter =counter+1;
+    var span = document.getElementById('count');
+    span.innerHTML=counter.toString();
 };
