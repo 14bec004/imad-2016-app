@@ -11,7 +11,7 @@ button.onclick =function()
             span.innspan.innerHTML=counter.toString();
 
         }
-    }
+    };
     request.open('GET','http://asashukla.imad.hasura-app.io/counter',true);
     request.send(null);
 };
