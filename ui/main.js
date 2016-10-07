@@ -1,13 +1,17 @@
-console.log('Loaded!');
-var element= document.getElementById('main-text');
-element.innerHTML='New value';
-var img= document.getElementById('madi');
-var marginLeft=0;
-function moveRight(){
-    marginLeft=marginLeft+10;
-     img.style.marginLeft=marginLeft +'px';
-}
-img.onclick = function(){
-    img.style.marginLeft='100px';
-    var interval=setInterval(moveRight,1);
+var button=document.getElementById('counter');
+
+button.onclick =function()
+{
+    var request= new XMLHttpRequest();
+    requst.onreadystatechange=function(){
+        if(requset.readyState===XMLHttpRequest.DONE)
+        if(request.status===200){
+            var counter = requset.responseText;
+            var span = document.getElementById('count');
+            span.innspan.innerHTML=counter.toString();
+
+        }
+    }
+    request.open('GET','http://asashukla.imad.hasura-app.io/counter',true);
+    request.send(null);
 };
